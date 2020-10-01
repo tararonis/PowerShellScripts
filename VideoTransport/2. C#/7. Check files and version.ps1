@@ -1,11 +1,13 @@
 #Check that VT folder contain all required files
 $root = "E:\Work\cvsroot\VT"
 $VT_Archive ="$root\Install\VT_archive"
+$vt_build_number = "1.7.3.666"
+
 $VT_Folder="$VT_Archive\Video Transport %vt_build_number%\Video Transport %vt_build_number%"	
 
 function not-exist { -not (Test-Path $args) }
 
-if(not-exist "$VT_Archive\Video Transport %vt_build_number%"))
+if(not-exist "$VT_Archive\Video Transport %vt_build_number%")
 {
 	& 'C:\Users\BuildServer3\Desktop\temp\bot\BuildSuc\bin\Debug\BotNotification.exe' "!!! Problem with VT-%vt_build_number%-$VT_Archive\Video Transport %vt_build_number%"
 	throw "Folder %vt_build_number% didn't been created"
@@ -14,8 +16,8 @@ if(not-exist "$VT_Archive\Video Transport %vt_build_number%"))
 $main_files=@(
 "Bin",
 "DLL",
-"Medialooks_EULA",
-"Readme",
+"Medialooks_EULA.pdf",
+"Readme.txt",
 "VT_Guest.exe",
 "VT_Guest.exe.config",
 "VT_Guest.exe.manifest",
@@ -103,8 +105,7 @@ Check_files -array $NDI -path "$VT_Folder\DLL\NDI"
 $main_files=@(
 "VT_Guest.exe",
 "VT_Publisher.exe",
-"VT_Receiver.exe",
-"VT_Server.exe")
+"VT_Receiver.exe")
 
 $Bin=@(
 "Interop.VTCORELib.dll",

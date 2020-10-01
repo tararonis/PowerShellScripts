@@ -41,7 +41,7 @@ foreach ($item in $Dlls){
         &$ChangeVersionTool "$Path\$item" --set-file-version "$maj.$min.$build.$incVersion" --set-product-version "$maj.$min.$build.$hash.$branch"        
         }
     catch{
-        Write-Host "Can change version $item"
+        Write-Host "Cant change version $item"
         Write-Host $_
         }
 }

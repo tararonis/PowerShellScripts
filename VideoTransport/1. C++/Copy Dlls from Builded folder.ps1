@@ -21,4 +21,5 @@ Copy-Item "$dll_source\Medialooks.Device.SCR.x86.dll" -Destination "$dll_dest" -
 Copy-Item "$dll_source\Medialooks.Runtime.x86.dll" -Destination "$dll_dest" -Force
 Copy-Item "$dll_source\Medialooks.VTCore.x86.dll" -Destination "$dll_dest" -Force
 Copy-Item "$dll_source\Medialooks.WebRTC.x86.dll" -Destination "$dll_dest" -Force
+Copy-Item "$dll_source\VT_Server.exe" -Destination "$dll_dest" -Force
 Copy-Item "$dll_source\MServer.exe" -Destination "$dll_dest" -Force

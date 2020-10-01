@@ -42,12 +42,8 @@ Copy-Item -Path "$VT_Csharp\VT_Publisher.exe.config" -Destination "$VT_Folder"
 Copy-Item -Path "$VT_Csharp\VT_Receiver.exe" -Destination "$VT_Folder"
 Copy-Item -Path "$VT_Csharp\VT_Receiver.exe.config" -Destination "$VT_Folder"
 
-#Copy VT_Server and Remove from DLLs
-if([System.IO.File]::Exists("$VT_Folder\DLL\VT_Server.exe"))
-{
-	Remove-Item -Force "$VT_Folder\DLL\VT_Server.exe" #remove VT_Server.exe(easier to do) #remove x64 folder(easier to do)
-}
-Copy-Item -Path "$root\BuildedDlls\VT_Server.exe" -Destination "$VT_Folder\" 
+#Move VT_Server from DLLs to main folder
+Move-Item -Path "$VT_Folder\DLL\VT_Server.exe" -Destination $VT_Folder
 
 #Copy manifests
 Copy-Item -Path "$VT_txt\VT_Guest.exe.manifest" -Destination "$VT_Folder\"
