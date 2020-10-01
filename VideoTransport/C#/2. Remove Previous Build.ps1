@@ -1,0 +1,1 @@
+Remove-Item "E:\Work\cvsroot\VT\VT_UI\Builded\x86\*" -Recurse -Force
