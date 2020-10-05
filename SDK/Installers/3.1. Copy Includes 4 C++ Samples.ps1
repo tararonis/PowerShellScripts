@@ -1,6 +1,6 @@
-$root = "E:\Work\cvsroot\MPlatform\trunk"
-$Source = "$root\Include"
-$Destination = "$root\Samples\MFormats\C++\!Include"
+$SDK_git = "E:\Work\cvsSDK_git\MPlatform\trunk"
+$Source = "$SDK_git\Include"
+$Destination = "$SDK_git\Samples\MFormats\C++\!Include"
 
 Copy-Item -Path "$Source\Base\*" -Destination "$Destination\Base\*" -Recurse -Force
 Copy-Item -Path "$Source\Devices\*" -Destination "$Destination\Devices\*" -Recurse -Force
