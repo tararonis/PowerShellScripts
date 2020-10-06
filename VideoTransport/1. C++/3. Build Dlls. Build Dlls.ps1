@@ -44,3 +44,20 @@ foreach($item in $projectsReleasePX){
     Write-Host $_
         }
 }
+
+
+#Build Dlls 4 GUI
+$MFormats= "E:\Work\cvsroot\MPlatform\trunk\MFormats\MFormats\MFormats.vcxproj"
+$VTCore="E:\Work\cvsroot\MPlatform\trunk\CustomProjects\NDI2Internet\MediaPipeCore\VTCore.vcxproj"
+
+$GUI_Dlls =@($MFormats, $VTCore)
+foreach($item in $GUI_Dlls){
+    try{
+        $collectionOfArgs = @("$item", "/target:ReBuild", "/property:Configuration=Release;Platform=Win32;OutDir=E:\Work\cvsroot\VT\VT_UI\RequiredDlls\")
+        & $msbuild $collectionOfArgs
+        }
+    catch{
+    Write-Host "Can't build $item"
+    Write-Host $_
+        }
+}
