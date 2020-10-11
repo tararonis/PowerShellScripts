@@ -5,7 +5,10 @@ $file = "E:\Work\cvsroot\MPlatform\trunk\Install\WIX\MFormats\MFormatsInclude.wx
 $new_file = "E:\Work\cvsroot\MPlatform\trunk\Install\WIX\MFormats\New_MFormatsInclude.wxi"
 
 #Clear file(more for tests)
-Clear-Content $new_file
+if([System.IO.File]::Exists($new_file))
+{
+    Clear-Content $new_file
+}
 
 #Get SDK version
 try{

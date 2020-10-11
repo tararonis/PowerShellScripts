@@ -1,5 +1,5 @@
 $MSbuild_path = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe"
-$root = "E:\Work\cvsroot\MPlatform\trunk\Utils\"
+$root = "E:\Work\cvsroot\MPlatform\trunk\Utils"
 
 #MSINK we won't rebuild because it's in the both installer(to prevent the exception) and changes in the MSink happend not very often(never)
 #MFVersionChecker
