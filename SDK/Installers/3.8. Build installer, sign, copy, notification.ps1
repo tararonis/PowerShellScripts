@@ -53,12 +53,6 @@ Rename-Item -Path "$Wix_bin\$Wix_name" -NewName "$new_name"
 #COPY
 Copy-Item -Path "$Wix_bin/$new_name" -Destination "\\192.168.0.100\MLFiles\Releases\Nightly\Not_tested\" -Force
 
-#Disable Rebuild Samples flag
-#Change the value of "SDK_rebuild_samples" from "true" to "false" with Rest api
-$serverAddress="http://ci.medialooks.com"
-$SDK_flag = "SDK_rebuild_samples"
-$body_SDK_flag = "<property name=""$SDK_flag"" value=""false""/>"
-
 Invoke-WebRequest -Uri "$serverAddress/guestAuth/app/rest/projects/id:MLBuildSDK10/parameters/$SDK_flag" -ContentType "application/xml" -Method Put -Body $body_SDK_flag
 # #NOTIFICATION
 &"C:\Users\BuildServer3\Desktop\temp\bot\BuildSuc\bin\Debug\BotNotification.exe" "$new_name build completed"
